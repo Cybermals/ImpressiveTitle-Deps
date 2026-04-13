@@ -313,10 +313,10 @@ bool GLXConfigurator::CreateWindow() {
 		NULL);
 
 	Widget helloButton = XtVaCreateManagedWidget("cancelButton", commandWidgetClass, bottomPanel, XtNlabel," Cancel ", NULL);
-	XtAddCallback(helloButton, XtNCallback.c_str(), (XtCallbackProc)&GLXConfigurator::cancelHandler, this);
+	XtAddCallback(helloButton, XtNcallback.c_str(), (XtCallbackProc)&GLXConfigurator::cancelHandler, this);
 
 	Widget exitButton = XtVaCreateManagedWidget("acceptButton", commandWidgetClass, bottomPanel, XtNlabel," Accept ", XtNfromHoriz,helloButton, NULL);
- 	XtAddCallback(exitButton, XtNCallback.c_str(), (XtCallbackProc)&GLXConfigurator::acceptHandler, this);
+ 	XtAddCallback(exitButton, XtNcallback.c_str(), (XtCallbackProc)&GLXConfigurator::acceptHandler, this);
 
 	XtRealizeWidget(toplevel);
 
@@ -471,7 +471,7 @@ void GLXConfigurator::SetRenderer(RenderSystem *r) {
 			Widget entry = XtVaCreateManagedWidget("menuentry", smeBSBObjectClass, menu,
 				XtNlabel, (*opt_it).c_str(),
 				0, NULL);
-			XtAddCallback(entry, XtNCallback.c_str(), (XtCallbackProc)&GLXConfigurator::configOptionHandler, &mConfigCallbackData.back());
+			XtAddCallback(entry, XtNcallback.c_str(), (XtCallbackProc)&GLXConfigurator::configOptionHandler, &mConfigCallbackData.back());
 		}
 		cury += rowh;
 	}
