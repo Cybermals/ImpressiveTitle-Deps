@@ -17,5 +17,3 @@ jobs:
         sudo cp -r usr/include/* /usr/include/
         sudo cp -r usr/lib64/* /usr/lib64/
         sudo cp -r usr/local/* /usr/local/
-        ls /usr/include/
-        ls /usr/lib64/
