@@ -1,0 +1,15 @@
+name: Build ImpressiveTitle Dependencies
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Repo
+      uses: actions/checkout@v6
+    - name: Install Build Dependencies
+      run: |
+        tar -xf Cg-3.1_April2012_x86_64.tgz
+        ls
