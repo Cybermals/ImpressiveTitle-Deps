@@ -12,5 +12,7 @@ jobs:
     - name: Install Build Dependencies
       run: |
         tar -xf Cg-3.1_April2012_x86_64.tgz
-        sudo mv usr /
+        sudo cp -r usr/include/* /usr/include/
+        sudo cp -r usr/lib64/* /usr/lib64/
+        ls /usr/include/
         ls /usr/lib64/
