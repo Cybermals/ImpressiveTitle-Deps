@@ -15,6 +15,7 @@
 ######################################################################
 
 cmake_minimum_required(VERSION 2.6.2)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
 cmake_policy(SET CMP0003 NEW)
 
