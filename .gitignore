@@ -21,6 +21,7 @@
 *.so
 *.dylib
 *.dll
+!cg.dll
 
 # Fortran module files
 *.mod
@@ -31,6 +32,7 @@
 *.la
 *.a
 *.lib
+!cg.lib
 
 # Executables
 *.exe
