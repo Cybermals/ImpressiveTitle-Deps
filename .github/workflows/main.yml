@@ -17,3 +17,8 @@ jobs:
         sudo cp -r usr/include/* /usr/include/
         sudo cp -r usr/lib64/* /usr/lib64/
         sudo cp -r usr/local/* /usr/local/
+    - name: Build Ogre
+      run: |
+        cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre
+        cmake --build ogre-build
+        cmake --install ogre-build
