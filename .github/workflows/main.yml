@@ -19,6 +19,6 @@ jobs:
         cmake --install ogredeps-build
     - name: Build Ogre
       run: |
-        cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre
+        cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre -DCg_INCLUDE_DIR=ogre_src_v1-7-4/Dependencies/include/Cg -DCg_LIBRARY_DBG=ogre_src_v1-7-4/Dependencies/lib -DCg_LIBRARY_REL=ogre_src_v1-7-4/Dependencies/lib
         cmake --build ogre-build
         cmake --install ogre-build
