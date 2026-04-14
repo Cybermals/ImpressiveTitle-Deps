@@ -22,6 +22,8 @@
 *.dylib
 *.dll
 !cg.dll
+!libCg.so
+!libCgGL.so
 
 # Fortran module files
 *.mod
