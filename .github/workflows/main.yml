@@ -19,7 +19,7 @@ jobs:
         sudo cp -r usr/local/* /usr/local/
     - name: Build Ogre Dependencies
       run: |
-        cmake -S ogredeps -B ogredeps-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGRDEPS_BUILD_CG=false -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_FREEIMAGE=false -DOGREDEPS_BUILD_FREETYPE=false -DOGREDEPS_BUILD_ZLIB=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
+        cmake -S ogredeps -B ogredeps-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_FREEIMAGE=false -DOGREDEPS_BUILD_FREETYPE=false -DOGREDEPS_BUILD_ZLIB=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
         cmake --build ogredeps-build
         cmake --install ogredeps-build
     - name: Build Ogre
