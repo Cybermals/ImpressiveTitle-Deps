@@ -32,6 +32,6 @@ jobs:
         ls Ogre/lib/
     - name: Build OgrePagedGeometry
       run: |
-        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=PagedGeometry -DOgre_INCLUDE_DIRS=Ogre/include/Ogre -DOgre_LIBRARY_DIRS=Ogre/lib
+        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=PagedGeometry -DOgre_INCLUDE_DIRS=Ogre/include/OGRE -DOgre_LIBRARY_DIRS=Ogre/lib
         cmake --build ogre-pagedgeometry-build
         cmake --install ogre-pagedgeometry-build 
