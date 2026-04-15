@@ -24,9 +24,6 @@ jobs:
         mkdir zziplib/lib
         cp -r ogre_src_v1-7-4/Dependencies/include/zzip/ zziplib/include/
         cp ogre_src_v1-7-4/Dependencies/lib/libzziplib.a zziplib/lib/
-        ls zziplib
-        ls zziplib/include
-        ls zziplib/lib
     - name: Build Ogre
       run: |
         cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre -DCg_INCLUDE_DIR=ogre_src_v1-7-4/Dependencies/include/Cg -DCg_LIBRARY_DBG=ogre_src_v1-7-4/Dependencies/lib -DCg_LIBRARY_REL=ogre_src_v1-7-4/Dependencies/lib
@@ -45,3 +42,15 @@ jobs:
         cmake -S RakNet-master -B RakNet-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build
         cmake --install RakNet-build
+    - name: Gather Build Outputs
+      run: |
+        mkdir -p deps/linux/amd64/gcc13/
+        mv Ogre/ deps/linux/amd64/gcc13/
+        mv PagedGeometry/ deps/linux/amd64/gcc13/
+        mv RakNet/ deps/linux/amd64/gcc13/
+        mv zziplib/ deps/linux/amd64/gcc13/
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: it-deps
+        path: deps/
