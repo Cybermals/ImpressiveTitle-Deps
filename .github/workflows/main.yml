@@ -31,6 +31,6 @@ jobs:
         sudo cp -r Ogre/lib/* /usr/lib/
     - name: Build OgrePagedGeometry
       run: |
-        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=PagedGeometry
+        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=PagedGeometry -DPAGEDGEOMETRY_BUILD_SAMPLES=false
         cmake --build ogre-pagedgeometry-build
         cmake --install ogre-pagedgeometry-build 
