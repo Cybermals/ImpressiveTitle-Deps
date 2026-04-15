@@ -19,9 +19,9 @@ jobs:
         cmake --install ogredeps-build
         cp -r ogredeps/src/Cg/include/ ogre_src_v1-7-4/Dependencies/
         cp -r ogredeps/src/Cg/lib64/*.so ogre_src_v1-7-4/Dependencies/lib/
-        mkdir zziplib
-        mkdir zziplib/include
-        mkdir zziplib/lib
+        mkdir zziplib/
+        mkdir zziplib/include/
+        mkdir zziplib/lib/
         cp -r ogre_src_v1-7-4/Dependencies/include/zzip/ zziplib/include/
         cp ogre_src_v1-7-4/Dependencies/lib/libzziplib.a zziplib/lib/
     - name: Build Ogre
@@ -42,6 +42,10 @@ jobs:
         cmake -S RakNet-master -B RakNet-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build
         cmake --install RakNet-build
+        mkdir RakNet/
+        mkdir RakNet/lib/
+        cp -r RakNet-master/include/ RakNet/
+        cp -r RakNet-master/Lib/DLL/* RakNet/lib/
     - name: Gather Build Outputs
       run: |
         ls
