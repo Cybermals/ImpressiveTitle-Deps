@@ -43,9 +43,10 @@ jobs:
         cmake --build RakNet-build
         cmake --install RakNet-build
         mkdir RakNet/
+        mkdir RakNet/include/
         mkdir RakNet/lib/
-        cp -r RakNet-master/include/ RakNet/
-        cp -r RakNet-master/Lib/DLL/* RakNet/lib/
+        cp -r RakNet-master/include/raknet/* RakNet/include/
+        cp -r RakNet-master/Lib/DLL/*.so RakNet/lib/
     - name: Gather Build Outputs
       run: |
         ls
