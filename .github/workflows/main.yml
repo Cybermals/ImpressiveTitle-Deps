@@ -44,11 +44,13 @@ jobs:
         cmake --install RakNet-build
     - name: Gather Build Outputs
       run: |
+        ls
         mkdir -p deps/linux/amd64/gcc13/
         mv Ogre/ deps/linux/amd64/gcc13/
         mv PagedGeometry/ deps/linux/amd64/gcc13/
-        mv RakNet-master/ deps/linux/amd64/gcc13/
+        mv RakNet/ deps/linux/amd64/gcc13/
         mv zziplib/ deps/linux/amd64/gcc13/
+        mv ogre_src_v1-7-4/Dependencies/ deps/linux/amd64/gcc13/
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v7
       with:
