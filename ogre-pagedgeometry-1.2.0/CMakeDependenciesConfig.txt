@@ -22,9 +22,9 @@ ELSEIF(UNIX)
 	PKG_CHECK_MODULES  (Ogre OGRE REQUIRED)
 	PKG_CHECK_MODULES  (Ogre-Terrain OGRE-Terrain REQUIRED)
 	PKG_CHECK_MODULES  (Ogre-Paging OGRE-Paging REQUIRED)
-	PKG_CHECK_MODULES  (Ois  OIS  REQUIRED)
+	# PKG_CHECK_MODULES  (Ois  OIS  REQUIRED)
 	# add includes to check directories
-	set(CMAKE_REQUIRED_INCLUDES ${Ogre_INCLUDE_DIRS} ${Ois_INCLUDE_DIRS})
+	set(CMAKE_REQUIRED_INCLUDES ${Ogre_INCLUDE_DIRS})
 	# check for libs and include files we want to use
 	# check below not working!?
 	#CHECK_LIBRARY_EXISTS(libOgreMain.so loadPlugins "" HAVE_OGRE_LIBS)
