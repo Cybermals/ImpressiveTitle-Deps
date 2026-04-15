@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Demo_BspCollision" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Debug Win32/Demo_BspCollision" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Optional" />
+					<Add directory="$(OGRE_HOME)/samples/include" />
+					<Add directory="$(OGRE_HOME)/include" />
+					<Add directory="$(OGRE_HOME)/samples/refapp/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Optional" />
+					<Add directory="$(OGRE_HOME)/samples/include" />
+					<Add directory="$(OGRE_HOME)/include" />
+					<Add directory="$(OGRE_HOME)/samples/refapp/include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="OgreMain_d" />
+					<Add library="OIS_d" />
+					<Add library="ReferenceAppLayer_d" />
+					<Add library="ws2_32" />
+					<Add directory="$(OGRE_HOME)/lib/" />
+					<Add directory="../../../Dependencies/lib/Debug Win32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy $(OGRE_HOME)\bin\Debug Win32\*.dll .\&#x0D;&#x0A;copy $(OGRE_HOME)\bin\Debug Win32\Plugins.cfg .\&#x0D;&#x0A;copy $(OGRE_HOME)\bin\Debug Win32\Media.cfg .\&#x0D;&#x0A;" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Release Win32/Demo_BspCollision" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-W" />
+					<Add option="-O2" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Optional" />
+					<Add directory="$(OGRE_HOME)/samples/include" />
+					<Add directory="$(OGRE_HOME)/include" />
+					<Add directory="$(OGRE_HOME)/samples/refapp/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Optional" />
+					<Add directory="$(OGRE_HOME)/samples/include" />
+					<Add directory="$(OGRE_HOME)/include" />
+					<Add directory="$(OGRE_HOME)/samples/refapp/include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="OgreMain" />
+					<Add library="OIS" />
+					<Add library="ReferenceAppLayer" />
+					<Add library="ws2_32" />
+					<Add directory="$(OGRE_HOME)/lib/" />
+					<Add directory="../../../Dependencies/lib/Release Win32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy $(OGRE_HOME)\bin\Release Win32\*.dll .\&#x0D;&#x0A;copy $(OGRE_HOME)\bin\Release Win32\Plugins.cfg .\&#x0D;&#x0A;copy $(OGRE_HOME)\bin\Release Win32\Media.cfg .\&#x0D;&#x0A;" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../../../../SQLite3ClientPlugin.cpp" />
+		<Unit filename="../../../../SQLite3ClientPlugin.h" />
+		<Unit filename="../../../../SQLite3PluginCommon.cpp" />
+		<Unit filename="../../../../SQLite3PluginCommon.h" />
+		<Unit filename="../../../SQLiteLoggerCommon.cpp" />
+		<Unit filename="../../../SQLiteLoggerCommon.h" />
+		<Unit filename="../../Optional/DX9_BackbufferGrabber.cpp" />
+		<Unit filename="../../Optional/DX9_BackbufferGrabber.h" />
+		<Unit filename="../../Optional/Ogre3D_DX9_BackbufferGrabber.cpp" />
+		<Unit filename="../../Optional/Ogre3D_DX9_BackbufferGrabber.h" />
+		<Unit filename="../../SQLiteClientLoggerPlugin.cpp" />
+		<Unit filename="../../SQLiteClientLoggerPlugin.h" />
+		<Unit filename="../Ogre3D$(OGRE_HOME)/include/ExampleRefAppApplication.h" />
+		<Unit filename="../Ogre3D$(OGRE_HOME)/include/ExampleRefAppFrameListener.h" />
+		<Unit filename="BspCollision.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RackspaceConsole" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Debug Win32/RackspaceConsole" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./../../DependentExtensions/openssl-1.0.0d/include" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Rackspace" />
+					<Add directory="./../../DependentExtensions/XML" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../DependentExtensions/openssl-1.0.0d/include" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Rackspace" />
+					<Add directory="./../../DependentExtensions/XML" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="ws2_32" />
+					<Add library="./../../DependentExtensions/openssl-1.0.0d/lib/libeay32" />
+					<Add library="./../../DependentExtensions/openssl-1.0.0d/lib/ssleay32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Release Win32/RackspaceConsole" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add directory="./../../DependentExtensions/openssl-1.0.0d/include" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Rackspace" />
+					<Add directory="./../../DependentExtensions/XML" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../DependentExtensions/openssl-1.0.0d/include" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Rackspace" />
+					<Add directory="./../../DependentExtensions/XML" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="ws2_32" />
+					<Add library="./../../DependentExtensions/openssl-1.0.0d/lib/libeay32" />
+					<Add library="./../../DependentExtensions/openssl-1.0.0d/lib/ssleay32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="main.cpp" />
+		<Unit filename="readme.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

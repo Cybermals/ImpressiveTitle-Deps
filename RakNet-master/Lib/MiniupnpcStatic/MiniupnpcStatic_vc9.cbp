@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MiniupnpcStatic" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="$(SolutionDir)Lib/$(SolutionName)_MiniupnpcStatic_vc9_Debug Win32_Win32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Win32/Debug Win32" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Debug x64">
+				<Option output="$(SolutionDir)Lib/$(SolutionName)_MiniupnpcStatic_vc9_Debug x64_Win32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Win32/Debug x64" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-W" />
+					<Add option="-O0" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="$(SolutionDir)Lib/$(SolutionName)_MiniupnpcStatic_vc9_Release Win32_Win32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Win32/Release Win32" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-W" />
+					<Add option="-O2" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release x64">
+				<Option output="$(SolutionDir)Lib/$(SolutionName)_MiniupnpcStatic_vc9_Release x64_Win32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Win32/Release x64" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-W" />
+					<Add option="-O2" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+				</ResourceCompiler>
+			</Target>
+		</Build>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/connecthostport.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/igd_desc_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minisoap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniupnpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniwget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minixml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/portlistingparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/receivedata.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpcommands.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnperrors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpreplyparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

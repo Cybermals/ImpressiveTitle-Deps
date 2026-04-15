@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ComprehensivePCGame" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Debug Win32/ComprehensivePCGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./../../Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+					<Add directory="$(SolutionDir)DependentExtensions/jansson-2.4/src" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+					<Add directory="$(SolutionDir)DependentExtensions/jansson-2.4/src" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="ws2_32" />
+					<Add library="IPHlpApi" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Release Win32/ComprehensivePCGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DSTATICLIB" />
+					<Add option="-W" />
+					<Add directory="./../../Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+					<Add directory="$(SolutionDir)DependentExtensions/jansson-2.4/src" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/miniupnpc-1.6.20120410" />
+					<Add directory="$(SolutionDir)DependentExtensions/jansson-2.4/src" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="ws2_32" />
+					<Add library="IPHlpApi" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/dump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/hashtable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/hashtable.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/jansson.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/jansson_config.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/jansson_private.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/load.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/pack_unpack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/strbuffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/strbuffer.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/strconv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/utf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/utf.h" />
+		<Unit filename="../../DependentExtensions/jansson-2.4/src/value.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/bsdqueue.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/codelength.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/connecthostport.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/connecthostport.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/declspec.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/igd_desc_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/igd_desc_parse.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minisoap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minissdpc.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniupnpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniupnpc.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniupnpcstrings.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniupnpctypes.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniwget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/miniwget.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minixml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/minixml.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/portlistingparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/portlistingparse.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/receivedata.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/receivedata.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpcommands.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpcommands.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnperrors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnperrors.h" />
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpreplyparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/miniupnpc-1.6.20120410/upnpreplyparse.h" />
+		<Unit filename="ComprehensivePCGame.cpp" />
+		<Unit filename="readme.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

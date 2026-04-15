@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lobby2Server_PGSQL" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Lobby2Server_PGSQL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-D__INTEGRATE_LOBBY2_WITH_ROOMS_PLUGIN" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Lobby2/Rooms" />
+					<Add directory="./../../DependentExtensions/Lobby2" />
+					<Add directory="./../../DependentExtensions/Lobby2/PGSQL" />
+					<Add directory="C:/Program Files (x86)/PostgreSQL/9.2/include" />
+					<Add directory="./../../DependentExtensions/PostgreSQLInterface" />
+					<Add directory="C:/Program Files/PostgreSQL/9.2/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Lobby2/Rooms" />
+					<Add directory="./../../DependentExtensions/Lobby2" />
+					<Add directory="./../../DependentExtensions/Lobby2/PGSQL" />
+					<Add directory="C:/Program Files (x86)/PostgreSQL/9.2/include" />
+					<Add directory="./../../DependentExtensions/PostgreSQLInterface" />
+					<Add directory="C:/Program Files/PostgreSQL/9.2/include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="ws2_32" />
+					<Add library="C:/Program" />
+					<Add library="Files" />
+					<Add library="(x86)/PostgreSQL/9.2/lib/libpq" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy C:\Program Files (x86)\PostgreSQL\9.2\bin\*.dll .\Debug" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Lobby2Server_PGSQL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-D__INTEGRATE_LOBBY2_WITH_ROOMS_PLUGIN" />
+					<Add option="-W" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Lobby2/Rooms" />
+					<Add directory="./../../DependentExtensions/Lobby2" />
+					<Add directory="./../../DependentExtensions/Lobby2/PGSQL" />
+					<Add directory="C:/Program Files (x86)/PostgreSQL/9.2/include" />
+					<Add directory="./../../DependentExtensions/PostgreSQLInterface" />
+					<Add directory="C:/Program Files/PostgreSQL/9.2/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/Lobby2/Rooms" />
+					<Add directory="./../../DependentExtensions/Lobby2" />
+					<Add directory="./../../DependentExtensions/Lobby2/PGSQL" />
+					<Add directory="C:/Program Files (x86)/PostgreSQL/9.2/include" />
+					<Add directory="./../../DependentExtensions/PostgreSQLInterface" />
+					<Add directory="C:/Program Files/PostgreSQL/9.2/include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="ws2_32" />
+					<Add library="C:/Program" />
+					<Add library="Files" />
+					<Add library="(x86)/PostgreSQL/9.2/lib/libpq" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy C:\Program Files (x86)\PostgreSQL\9.2\bin\*.dll .\Release" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Message.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Message.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Plugin.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Plugin.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Presence.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Presence.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2ResultCode.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2ResultCode.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Server.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Lobby2Server.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/PGSQL/Lobby2Message_PGSQL.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/PGSQL/Lobby2Message_PGSQL.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/PGSQL/Lobby2Server_PGSQL.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/PGSQL/Lobby2Server_PGSQL.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/IntervalTimer.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/IntervalTimer.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/ProfanityFilter.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/ProfanityFilter.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomTypes.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomTypes.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsContainer.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsContainer.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsErrorCodes.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsErrorCodes.h" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsPlugin.cpp" />
+		<Unit filename="../../DependentExtensions/Lobby2/Rooms/RoomsPlugin.h" />
+		<Unit filename="../../DependentExtensions/PostgreSQLInterface/PostgreSQLInterface.cpp" />
+		<Unit filename="../../DependentExtensions/PostgreSQLInterface/PostgreSQLInterface.h" />
+		<Unit filename="Lobby2ServerSample_PGSQL.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="RakNet_VS2008 workspace">
+		<Project filename="Lib/DLL/DLL_vc9.cbp" />
+		<Project filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		<Project filename="Samples/Ping/Ping_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RakVoice/RakVoice_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Timestamping/Timestamping_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Encryption/Encryption_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Flow Control Test/FlowControlTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Dropped Connection Test/DroppedConnectionTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/LoopbackPerformanceTest/LoopbackPerformanceTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/LANServerDiscovery/LANServerDiscovery_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Reliable Ordered Test/ReliableOrderedTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Fully Connected Mesh/FullyConnectedMesh_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/BigPacketTest/BigPacketTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/OfflineMessagesTest/OfflineMessagesTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ComprehensiveTest/ComprehensiveTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/PacketLogger/PacketLoggerTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CommandConsoleServer/CommandConsoleServer_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CommandConsoleClient/CommandConsoleClient_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/TestDLL/TestDLL_vc9.cbp">
+			<Depends filename="Lib/DLL/DLL_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CrossConnectionTest/CrossConnectionTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ThreadTest/ThreadTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/DirectoryDeltaTransfer/DirectoryDeltaTransfer_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutopatcherClientRestarter/AutopatcherClientRestarter_vc9.cbp" />
+		<Project filename="DependentExtensions/Autopatcher/AutopatcherPostgreRepository/AutopatcherPostgreRepository_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutopatcherClient/AutopatcherClient_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutopatcherServer/AutopatcherServer_vc9.cbp">
+			<Depends filename="DependentExtensions/Autopatcher/AutopatcherPostgreRepository/AutopatcherPostgreRepository_vc9.cbp" />
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CrashReporter/CrashReporter_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/SendEmail/SendEmail_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Chat Example/Chat Example Client_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Chat Example/Chat Example Server_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/MessageFilter/MessageFilter_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RakVoiceFMOD/RakVoiceFMOD_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/Ogre3DInterpDemo/Ogre3DInterpDemo.cbp">
+			<Depends filename="Lib/DLL/DLL_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RakVoiceDSound/RakVoiceDSound_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutoPatcherServer_MySQL/AutopatcherServer_MySQL.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+			<Depends filename="DependentExtensions/Autopatcher/AutopatcherMySQLRepository/AutopatcherMySQLRepository.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/Autopatcher/AutopatcherMySQLRepository/AutopatcherMySQLRepository.cbp" />
+		<Project filename="Samples/RPC3/RPC3.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/FileListTransfer/FileListTransfer.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Rooms/Rooms.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Lobby2Server_PGSQL/Lobby2Server_PGSQL.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Lobby2Client/Lobby2Client.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/UDPForwarder/UDPForwarder.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ReplicaManager3/ReplicaManager3.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/IrrlichtDemo/IrrlichtDemo.v8.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/SQLite3Plugin/SQLite3Plugin.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutopatcherClientGFx3.0/AutopatcherClientGFx3.0_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/FCMHost/FCM2Host.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/PHPDirectoryServer2/PHPDirectoryServer2.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Samples/D3D9/Matrices_2008.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Samples/Simple/SQLiteClientLogger.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/SQLite3Plugin/Logger/ServerOnly/SQLiteServerLogger.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="DependentExtensions/SQLite3Plugin/Logger/ClientOnly/Samples/Ogre3D/BspCollision_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ServerClientTest2/ServerClientTest2_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/FCMHostSimultaneous/FCM2HostSimultaneous.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/MessageSizeTest/MessageSizeTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Router2/Router2_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/TeamManager/TeamManager_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/NATCompleteServer/NATCompleteServer.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/NATCompleteClient/NATCompleteClient.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+			<Depends filename="Lib/MiniupnpcStatic/MiniupnpcStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/SteamLobby/SteamLobby.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RPC4/RPC4.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Lobby2ClientGFx3.0/Lobby2ClientGFx3.0.cbp" />
+		<Project filename="Samples/RoomsBrowserGFx3/RakNet/RoomsBrowserGFx3_RakNet.cbp" />
+		<Project filename="Samples/TwoWayAuthentication/TwoWayAuthentication.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CloudTest/CloudTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CloudServer/CloudServer_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/CloudClient/CloudClient_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RackspaceConsole/RackspaceConsole_vc9.cbp" />
+		<Project filename="Samples/BurstTest/BurstTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ReadyEvent/ReadyEvent_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ComprehensivePCGame/ComprehensivePCGame_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/FCMVerifiedJoinSimultaneous/FCM2VerifiedJoinSimultaneous.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/StatisticsHistoryTest/StatisticsHistoryTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/ReplicatedLogin/ReplicatedLogin_vc8.cbp" />
+		<Project filename="Samples/MasterServer2/MasterServer2.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+			<Depends filename="Lib/JanssonStatic/JanssonStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/RelayPluginTest/RelayPluginTest_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/AutopatcherServer_SelfScaling/AutopatcherServer_SelfScaling_vc9.cbp" />
+		<Project filename="Lib/JanssonStatic/JanssonStatic_vc9.cbp" />
+		<Project filename="Lib/MiniupnpcStatic/MiniupnpcStatic_vc9.cbp" />
+		<Project filename="Samples/AutopatcherClient_SelfScaling/AutopatcherClient_SelfScaling_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/PacketConsoleLogger/PacketConsoleLogger_vc9.cbp">
+			<Depends filename="Lib/LibStatic/LibStatic_vc9.cbp" />
+		</Project>
+		<Project filename="Samples/Lobby3/Lobby3.cbp">
+			<Depends filename="Lib/JanssonStatic/JanssonStatic_vc9.cbp" />
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>

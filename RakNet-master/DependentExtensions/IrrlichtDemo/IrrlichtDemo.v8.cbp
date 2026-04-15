@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="IrrlichtDemo" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="C:/Users/Eric/Documents/Libraries/RakNet-master/DependentExtensions/IrrlichtDemo/Debug Win32/IrrlichtRakNetDemo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="C:/irrlicht-1.7.2/include" />
+					<Add directory="./../../DependentExtensions/miniupnpc-1.5" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="C:/irrlicht-1.7.2/include" />
+					<Add directory="./../../DependentExtensions/miniupnpc-1.5" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="ws2_32" />
+					<Add library="IPHlpApi" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy C:\irrlicht-1.7.2\bin\Win32-VisualStudio\Irrlicht.dll .\" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="C:/Users/Eric/Documents/Libraries/RakNet-master/DependentExtensions/IrrlichtDemo/Release Win32/IrrlichtRakNetDemo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-W" />
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="C:/irrlicht-1.7.2/include" />
+					<Add directory="./../../DependentExtensions/miniupnpc-1.5" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="C:/irrlicht-1.7.2/include" />
+					<Add directory="./../../DependentExtensions/miniupnpc-1.5" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="ws2_32" />
+					<Add library="IPHlpApi" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy C:\irrlicht-1.7.2\bin\Win32-VisualStudio\Irrlicht.dll .\" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../miniupnpc-1.5/connecthostport.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/connecthostport.h" />
+		<Unit filename="../miniupnpc-1.5/igd_desc_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/igd_desc_parse.h" />
+		<Unit filename="../miniupnpc-1.5/minisoap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/minisoap.h" />
+		<Unit filename="../miniupnpc-1.5/miniupnpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/miniupnpc.h" />
+		<Unit filename="../miniupnpc-1.5/miniwget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/miniwget.h" />
+		<Unit filename="../miniupnpc-1.5/minixml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/minixml.h" />
+		<Unit filename="../miniupnpc-1.5/upnpcommands.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/upnpcommands.h" />
+		<Unit filename="../miniupnpc-1.5/upnperrors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/upnperrors.h" />
+		<Unit filename="../miniupnpc-1.5/upnpreplyparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../miniupnpc-1.5/upnpreplyparse.h" />
+		<Unit filename="CDemo.cpp" />
+		<Unit filename="CDemo.h" />
+		<Unit filename="CMainMenu.cpp" />
+		<Unit filename="CMainMenu.h" />
+		<Unit filename="RakNetStuff.cpp" />
+		<Unit filename="RakNetStuff.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="readme.txt" />
+		<Unit filename="resource.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

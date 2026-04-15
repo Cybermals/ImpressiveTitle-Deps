@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RakVoice" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Debug Win32/RakVoice" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DHAVE_CONFIG_H" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_common" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_win_wmme" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/include" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/win32" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_common" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_win_wmme" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/include" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/win32" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="Winmm" />
+					<Add library="ws2_32" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Release Win32/RakVoice" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DHAVE_CONFIG_H" />
+					<Add option="-W" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_common" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_win_wmme" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/include" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/win32" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_common" />
+					<Add directory="./../../DependentExtensions/portaudio_v18_1/pa_win_wmme" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/include" />
+					<Add directory="./../../DependentExtensions/speex-1.1.12/win32" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="Winmm" />
+					<Add library="ws2_32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../../DependentExtensions/RakVoice.cpp" />
+		<Unit filename="../../DependentExtensions/RakVoice.h" />
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/pa_convert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/pa_host.h" />
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/pa_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/pa_trace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/pa_trace.h" />
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_common/portaudio.h" />
+		<Unit filename="../../DependentExtensions/portaudio_v18_1/pa_win_wmme/pa_win_wmme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/_kiss_fft_guts.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/arch.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/bits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/cb_search.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/cb_search.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/cb_search_arm4.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/cb_search_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/cb_search_sse.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_10_16_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_10_32_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_20_32_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_5_256_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_5_64_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/exc_8_128_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fftwrap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fftwrap.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/filters.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/filters.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/filters_arm4.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/filters_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/filters_sse.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fixed_arm4.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fixed_arm5e.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fixed_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fixed_debug.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/fixed_generic.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/gain_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/gain_table_lbr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/hexc_10_32_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/hexc_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/high_lsp_tables.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/jitter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/kiss_fft.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/kiss_fft.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/kiss_fftr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/kiss_fftr.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lbr_48k_tables.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lpc.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lpc_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lsp.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/lsp_tables_nb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/ltp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/ltp.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/ltp_arm4.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/ltp_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/ltp_sse.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/math_approx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/math_approx.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/mdf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/misc.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/misc_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/modes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/modes.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/nb_celp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/nb_celp.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/preprocess.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/pseudofloat.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/quant_lsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/quant_lsp.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/sb_celp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/sb_celp.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/smallft.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/smallft.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/speex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/speex_callbacks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/speex_header.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/stack_alloc.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/stereo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vbr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vbr.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vorbis_psy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vorbis_psy.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vq.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vq_arm4.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vq_bfin.h" />
+		<Unit filename="../../DependentExtensions/speex-1.1.12/libspeex/vq_sse.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="readme.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

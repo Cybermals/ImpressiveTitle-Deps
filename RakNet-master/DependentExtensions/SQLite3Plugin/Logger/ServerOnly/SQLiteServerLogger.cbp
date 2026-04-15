@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SQLiteServerLogger" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="SQLiteServerLogger" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/Src" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/External/include" />
+					<Add directory="$(SolutionDir)DependentExtensions/jpeg-7" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ServerOnly" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/Src" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/External/include" />
+					<Add directory="$(SolutionDir)DependentExtensions/jpeg-7" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ServerOnly" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="$(SolutionDir)Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="ws2_32" />
+					<Add directory="$(SolutionDir)/DependentExtensions/DXTCompressor/External/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy $(SolutionDir)DependentExtensions\DXTCompressor\*.dll .\" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="SQLiteServerLogger" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/Src" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/External/include" />
+					<Add directory="$(SolutionDir)DependentExtensions/jpeg-7" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ServerOnly" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(SolutionDir)Source" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/Src" />
+					<Add directory="$(SolutionDir)DependentExtensions/DXTCompressor/External/include" />
+					<Add directory="$(SolutionDir)DependentExtensions/jpeg-7" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger" />
+					<Add directory="$(SolutionDir)DependentExtensions/SQLite3Plugin/Logger/ServerOnly" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="$(SolutionDir)Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="ws2_32" />
+					<Add directory="$(SolutionDir)/DependentExtensions/DXTCompressor/External/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="copy $(SolutionDir)DependentExtensions\DXTCompressor\*.dll .\" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../../../DXTCompressor/Src/DDSHeader.h" />
+		<Unit filename="../../../DXTCompressor/Src/DXTCompressor.cpp" />
+		<Unit filename="../../../DXTCompressor/Src/DXTCompressor.h" />
+		<Unit filename="../../../DXTCompressor/Src/FrameBufferRenderBuffer.hpp" />
+		<Unit filename="../../../DXTCompressor/Src/OpenGLWindow.hpp" />
+		<Unit filename="../../../DXTCompressor/Src/ShaderSource.h" />
+		<Unit filename="../../../jpeg-7/cderror.h" />
+		<Unit filename="../../../jpeg-7/cdjpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/cdjpeg.h" />
+		<Unit filename="../../../jpeg-7/jaricom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jccoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jccolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcdctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jchuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcinit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcomapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jconfig.h" />
+		<Unit filename="../../../jpeg-7/jcparam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcprepct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jcsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jctrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdatadst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdatasrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdcoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdcolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdct.h" />
+		<Unit filename="../../../jpeg-7/jddctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdhuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdmerge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdpostct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jdtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jerror.h" />
+		<Unit filename="../../../jpeg-7/jfdctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jfdctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jfdctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jidctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jidctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jidctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jinclude.h" />
+		<Unit filename="../../../jpeg-7/jmemansi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jmemmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jmemsys.h" />
+		<Unit filename="../../../jpeg-7/jmorecfg.h" />
+		<Unit filename="../../../jpeg-7/jpegint.h" />
+		<Unit filename="../../../jpeg-7/jpeglib.h" />
+		<Unit filename="../../../jpeg-7/jquant1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jquant2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jutils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/jversion.h" />
+		<Unit filename="../../../jpeg-7/memsrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdbmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdcolmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdgif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdppm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdrle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdswitch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/rdtarga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/transupp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/transupp.h" />
+		<Unit filename="../../../jpeg-7/wrbmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/wrgif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/wrppm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/wrrle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../jpeg-7/wrtarga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SQLite3PluginCommon.cpp" />
+		<Unit filename="../../SQLite3PluginCommon.h" />
+		<Unit filename="../../SQLite3ServerPlugin.cpp" />
+		<Unit filename="../../SQLite3ServerPlugin.h" />
+		<Unit filename="../../sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sqlite3.h" />
+		<Unit filename="../../sqlite3ext.h" />
+		<Unit filename="../SQLiteLoggerCommon.cpp" />
+		<Unit filename="../SQLiteLoggerCommon.h" />
+		<Unit filename="SQLiteServerLoggerPlugin.cpp" />
+		<Unit filename="SQLiteServerLoggerPlugin.h" />
+		<Unit filename="SQLiteServerLoggerSample.cpp" />
+		<Unit filename="jpeg_memory_dest.cpp" />
+		<Unit filename="jpeg_memory_dest.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

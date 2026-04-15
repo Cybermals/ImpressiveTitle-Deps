@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="AutopatcherClientGFx3" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Debug Win32/AutopatcherClientGFx3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/GFx3" />
+					<Add directory="./../../DependentExtensions/Autopatcher" />
+					<Add directory="./../../DependentExtensions/bzip2-1.0.6" />
+					<Add directory="$(GFXSDK)/Src/GRenderer" />
+					<Add directory="$(GFXSDK)/Src/GKernel" />
+					<Add directory="$(GFXSDK)/Src/GFxXML" />
+					<Add directory="$(GFXSDK)/Include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/GFx3" />
+					<Add directory="./../../DependentExtensions/Autopatcher" />
+					<Add directory="./../../DependentExtensions/bzip2-1.0.6" />
+					<Add directory="$(GFXSDK)/Src/GRenderer" />
+					<Add directory="$(GFXSDK)/Src/GKernel" />
+					<Add directory="$(GFXSDK)/Src/GFxXML" />
+					<Add directory="$(GFXSDK)/Include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Debug_Win32" />
+					<Add library="ws2_32" />
+					<Add library="libgfx" />
+					<Add library="libjpeg" />
+					<Add library="zlib" />
+					<Add library="imm32" />
+					<Add library="winmm" />
+					<Add library="libgrenderer_d3d9" />
+					<Add library="d3dx9" />
+					<Add library="d3d9" />
+					<Add directory="$(DXSDK_DIR)/Lib/x86" />
+					<Add directory="$(GFXSDK)/3rdParty/expat-2.0.1/lib" />
+					<Add directory="$(GFXSDK)/Lib/Win32/Msvc80/Debug/" />
+					<Add directory="$(GFXSDK)/3rdParty/zlib-1.2.3/Lib/Win32/Msvc80/Debug" />
+					<Add directory="$(GFXSDK)/3rdParty/jpeg-6b/Lib/Win32/Msvc80/Debug" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Release Win32/AutopatcherClientGFx3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/GFx3" />
+					<Add directory="./../../DependentExtensions/Autopatcher" />
+					<Add directory="./../../DependentExtensions/bzip2-1.0.6" />
+					<Add directory="$(GFXSDK)/Src/GRenderer" />
+					<Add directory="$(GFXSDK)/Src/GKernel" />
+					<Add directory="$(GFXSDK)/Src/GFxXML" />
+					<Add directory="$(GFXSDK)/Include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="./" />
+					<Add directory="./../../Source" />
+					<Add directory="./../../DependentExtensions/GFx3" />
+					<Add directory="./../../DependentExtensions/Autopatcher" />
+					<Add directory="./../../DependentExtensions/bzip2-1.0.6" />
+					<Add directory="$(GFXSDK)/Src/GRenderer" />
+					<Add directory="$(GFXSDK)/Src/GKernel" />
+					<Add directory="$(GFXSDK)/Src/GFxXML" />
+					<Add directory="$(GFXSDK)/Include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="./../../Lib/RakNet_VS2008_LibStatic_Release_Win32" />
+					<Add library="ws2_32" />
+					<Add library="libgfx" />
+					<Add library="libjpeg" />
+					<Add library="zlib" />
+					<Add library="imm32" />
+					<Add library="winmm" />
+					<Add library="libgrenderer_d3d9" />
+					<Add library="d3dx9" />
+					<Add library="d3d9" />
+					<Add directory="$(DXSDK_DIR)/Lib/x86" />
+					<Add directory="$(GFXSDK)/3rdParty/expat-2.0.1/lib" />
+					<Add directory="$(GFXSDK)/Lib/Win32/Msvc80/Release/" />
+					<Add directory="$(GFXSDK)/3rdParty/zlib-1.2.3/Lib/Win32/Msvc80/Release" />
+					<Add directory="$(GFXSDK)/3rdParty/jpeg-6b/Lib/Win32/Msvc80/Release" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../../DependentExtensions/Autopatcher/ApplyPatch.cpp" />
+		<Unit filename="../../DependentExtensions/Autopatcher/ApplyPatch.h" />
+		<Unit filename="../../DependentExtensions/Autopatcher/AutopatcherClient.cpp" />
+		<Unit filename="../../DependentExtensions/Autopatcher/AutopatcherClient.h" />
+		<Unit filename="../../DependentExtensions/Autopatcher/MemoryCompressor.cpp" />
+		<Unit filename="../../DependentExtensions/Autopatcher/MemoryCompressor.h" />
+		<Unit filename="../../DependentExtensions/GFx3/FxGameDelegate.cpp" />
+		<Unit filename="../../DependentExtensions/GFx3/FxGameDelegate.h" />
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/blocksort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/bzip2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/bzlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/bzlib.h" />
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/bzlib_private.h" />
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/crctable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/decompress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/huffman.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../DependentExtensions/bzip2-1.0.6/randtable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Source/AutopatcherPatchContext.h" />
+		<Unit filename="AutopatcherClientGFx3Impl.cpp" />
+		<Unit filename="AutopatcherClientGFx3Impl.h" />
+		<Unit filename="GFxPlayerTinyD3D9.cpp" />
+		<Unit filename="readme.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
