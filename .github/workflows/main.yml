@@ -19,8 +19,14 @@ jobs:
         cmake --install ogredeps-build
         cp -r ogredeps/src/Cg/include/ ogre_src_v1-7-4/Dependencies/
         cp -r ogredeps/src/Cg/lib64/*.so ogre_src_v1-7-4/Dependencies/lib/
-        sudo cp -r ogre_src_v1-7-4/Dependencies/include/* /usr/include/
-        sudo cp -r ogre_src_v1-7-4/Dependencies/lib/* /usr/lib/
+        mkdir zziplib
+        mkdir zziplib/include
+        mkdir zziplib/lib
+        cp -r ogre_src_v1-7-4/Dependencies/include/zziplib/ zziplib/include/
+        cp ogre_src_v1-7-4/Dependencies/lib/libzziplib.a zziplib/lib/
+        ls zziplib
+        ls zziplib/include
+        ls zziplib/lib
     - name: Build Ogre
       run: |
         cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre -DCg_INCLUDE_DIR=ogre_src_v1-7-4/Dependencies/include/Cg -DCg_LIBRARY_DBG=ogre_src_v1-7-4/Dependencies/lib -DCg_LIBRARY_REL=ogre_src_v1-7-4/Dependencies/lib
