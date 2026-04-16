@@ -49,7 +49,6 @@ jobs:
         cp -r RakNet-master/Lib/DLL/*.so RakNet/lib/
     - name: Gather Build Outputs
       run: |
-        ls
         mkdir -p deps/linux/amd64/gcc13/
         mv Ogre/ deps/linux/amd64/gcc13/
         cp -r ogre_src_v1-7-4/Dependencies/* deps/linux/amd64/gcc13/Ogre/
