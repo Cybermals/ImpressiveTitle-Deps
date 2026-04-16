@@ -52,9 +52,16 @@ jobs:
         ls
         mkdir -p deps/linux/amd64/gcc13/
         mv Ogre/ deps/linux/amd64/gcc13/
+        cp -r ogre_src_v1-7-1/Dependencies/* deps/linux/amd64/gcc13/Ogre/
         mv PagedGeometry/ deps/linux/amd64/gcc13/
         mv RakNet/ deps/linux/amd64/gcc13/
         mv zziplib/ deps/linux/amd64/gcc13/
+    - name: Adjust Build Output Paths
+      run: |
+        mv deps/linux/amd64/gcc13/Ogre/lib/OGRE/* deps/linux/amd64/gcc13/Ogre/lib/
+        rm -r deps/linux/amd64/gcc13/Ogre/lib/OGRE/
+        mv deps/linux/amd64/gcc13/PagedGeometry/include/PagedGeometry/* deps/linux/amd64/gcc13/PagedGeometry/include/
+        rm -r deps/linux/amd64/gcc13/PagedGeometry/include/PagedGeometry/
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v7
       with:
