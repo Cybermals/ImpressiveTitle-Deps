@@ -52,7 +52,7 @@ jobs:
         ls
         mkdir -p deps/linux/amd64/gcc13/
         mv Ogre/ deps/linux/amd64/gcc13/
-        cp -r ogre_src_v1-7-1/Dependencies/* deps/linux/amd64/gcc13/Ogre/
+        cp -r ogre_src_v1-7-4/Dependencies/* deps/linux/amd64/gcc13/Ogre/
         mv PagedGeometry/ deps/linux/amd64/gcc13/
         mv RakNet/ deps/linux/amd64/gcc13/
         mv zziplib/ deps/linux/amd64/gcc13/
