@@ -87,11 +87,11 @@ namespace Ogre {
 
 /* Define whether or not Ogre compiled with SSE supports.
 */
-#if OGRE_DOUBLE_PRECISION == 0 && OGRE_CPU == OGRE_CPU_X86 && OGRE_COMPILER == OGRE_COMPILER_MSVC
+/* #if OGRE_DOUBLE_PRECISION == 0 && OGRE_CPU == OGRE_CPU_X86 && OGRE_COMPILER == OGRE_COMPILER_MSVC
 #   define __OGRE_HAVE_SSE  1
 #elif OGRE_DOUBLE_PRECISION == 0 && OGRE_CPU == OGRE_CPU_X86 && OGRE_COMPILER == OGRE_COMPILER_GNUC && OGRE_PLATFORM != OGRE_PLATFORM_APPLE_IOS
 #   define __OGRE_HAVE_SSE  1
-#endif
+#endif */
 
 /* Define whether or not Ogre compiled with VFP supports.
  */
