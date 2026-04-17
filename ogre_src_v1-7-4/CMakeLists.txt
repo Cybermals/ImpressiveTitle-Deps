@@ -94,12 +94,12 @@ if (NOT APPLE)
 endif ()
 
 # Set compiler specific build flags
-if (CMAKE_COMPILER_IS_GNUCXX)
-  check_cxx_compiler_flag(-msse OGRE_GCC_HAS_SSE)
-  if (OGRE_GCC_HAS_SSE)
-    add_definitions(-msse)
-  endif ()
-endif ()
+# if (CMAKE_COMPILER_IS_GNUCXX)
+#  check_cxx_compiler_flag(-msse OGRE_GCC_HAS_SSE)
+#  if (OGRE_GCC_HAS_SSE)
+#    add_definitions(-msse)
+#  endif ()
+# endif ()
 if (MSVC)
   if (CMAKE_BUILD_TOOL STREQUAL "nmake")
     # set variable to state that we are using nmake makefiles
