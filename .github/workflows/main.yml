@@ -14,7 +14,7 @@ jobs:
         sudo apt install xorg-dev libgl-dev libglu-dev libfreeimage-dev libfreetype-dev libpulse-dev
     - name: Build Ogre Dependencies
       run: |
-        cmake -S ogredeps -B ogredeps-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_FREEIMAGE=false -DOGREDEPS_BUILD_FREETYPE=false -DOGREDEPS_BUILD_ZLIB=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
+        cmake -S ogredeps -B ogredeps-build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_FREEIMAGE=false -DOGREDEPS_BUILD_FREETYPE=false -DOGREDEPS_BUILD_ZLIB=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
         cmake --build ogredeps-build
         cmake --install ogredeps-build
         cp -r ogredeps/src/Cg/include/ ogre_src_v1-7-4/Dependencies/
@@ -26,7 +26,7 @@ jobs:
         cp ogre_src_v1-7-4/Dependencies/lib/libzziplib.a zziplib/lib/
     - name: Build Ogre
       run: |
-        cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=Ogre -DCg_INCLUDE_DIR=ogre_src_v1-7-4/Dependencies/include/Cg -DCg_LIBRARY_DBG=ogre_src_v1-7-4/Dependencies/lib -DCg_LIBRARY_REL=ogre_src_v1-7-4/Dependencies/lib
+        cmake -S ogre_src_v1-7-4 -B ogre-build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=Ogre -DCg_INCLUDE_DIR=ogre_src_v1-7-4/Dependencies/include/Cg -DCg_LIBRARY_DBG=ogre_src_v1-7-4/Dependencies/lib -DCg_LIBRARY_REL=ogre_src_v1-7-4/Dependencies/lib
         cmake --build ogre-build
         cmake --install ogre-build
         sudo cp -r Ogre/bin/* /usr/bin/
@@ -34,12 +34,12 @@ jobs:
         sudo cp -r Ogre/lib/* /usr/lib/
     - name: Build OgrePagedGeometry
       run: |
-        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=PagedGeometry -DPAGEDGEOMETRY_BUILD_SAMPLES=false
+        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=PagedGeometry -DPAGEDGEOMETRY_BUILD_SAMPLES=false
         cmake --build ogre-pagedgeometry-build
         cmake --install ogre-pagedgeometry-build
     - name: Build RakNet
       run: |
-        cmake -S RakNet-master -B RakNet-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=RakNet
+        cmake -S RakNet-master -B RakNet-build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build
         cmake --install RakNet-build
         mkdir RakNet/
