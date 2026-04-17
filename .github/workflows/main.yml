@@ -59,6 +59,8 @@ jobs:
       run: |
         mv deps/linux/amd64/gcc13/Ogre/lib/OGRE/* deps/linux/amd64/gcc13/Ogre/lib/
         rm -r deps/linux/amd64/gcc13/Ogre/lib/OGRE/
+        rm -r deps/linux/amd64/gcc13/Ogre/lib/cmake/
+        rm -r deps/linux/amd64/gcc13/Ogre/lib/pkgconfig/
         mv deps/linux/amd64/gcc13/PagedGeometry/include/PagedGeometry/* deps/linux/amd64/gcc13/PagedGeometry/include/
         rm -r deps/linux/amd64/gcc13/PagedGeometry/include/PagedGeometry/
     - name: Upload Build Artifacts
