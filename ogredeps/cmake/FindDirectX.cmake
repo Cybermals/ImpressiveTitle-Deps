@@ -16,7 +16,7 @@
 # DirectX_ROOT_DIR
 
 # CMake 3.4.0 = earliest version that provides CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION
-cmake_minimum_required(VERSION 3.4.0)
+cmake_minimum_required(VERSION 3.5)
 
 if(WIN32) # The only platform it makes sense to check for DirectX SDK
   include(FindPkgMacros)
