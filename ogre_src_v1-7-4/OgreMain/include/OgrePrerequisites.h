@@ -31,6 +31,7 @@ THE SOFTWARE
 
 // Needed for OGRE_WCHAR_T_STRINGS below
 #include <string>
+#include <unordered_map>
 
 
 // configure memory tracking
