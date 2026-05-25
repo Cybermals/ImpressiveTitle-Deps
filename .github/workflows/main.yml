@@ -77,7 +77,7 @@ jobs:
       shell: powershell
       run: |
         Write-Host "Downloading Legacy DirectX SDK..."
-        Invoke-WebRequest -Uri "https://download.microsoft.com/download/A/E/7/AE743F1F-304B-4E1C-95C3-454C1FE017DE/directx_jun2010_redist.exe" -OutFile "dx_redist.exe"
+        Invoke-WebRequest -Uri "https://download.microsoft.com/download/a/e/7/ae743f1f-632b-4809-87a9-aa1bb3458e31/DXSDK_Jun10.exe" -OutFile "dx_redist.exe"
         
         Write-Host "Extracting installer..."
         New-Item -ItemType Directory -Path "dx_extract" -Force
