@@ -6,7 +6,7 @@
 ######################################################################
 # cmake system for PagedGeometry updated on the 5th of April by thomas{at}thomasfischer{DOT}biz
 
-cmake_minimum_required(VERSION 2.4)
+cmake_minimum_required(VERSION 3.5)
 # loose if - else constructs
 SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
 if(COMMAND cmake_policy)
