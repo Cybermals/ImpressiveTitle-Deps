@@ -38,7 +38,7 @@ set(FreeImage_SOURCES
 	Source/FreeImage/PluginCUT.cpp
 	Source/FreeImage/PluginDDS.cpp
 	# Source/FreeImage/PluginEXR.cpp
-	Source/FreeImage/PluginG3.cpp
+	# Source/FreeImage/PluginG3.cpp
 	Source/FreeImage/PluginGIF.cpp
 	Source/FreeImage/PluginHDR.cpp
 	Source/FreeImage/PluginICO.cpp
@@ -60,7 +60,7 @@ set(FreeImage_SOURCES
 	# Source/FreeImage/PluginRAW.cpp
 	Source/FreeImage/PluginSGI.cpp
 	Source/FreeImage/PluginTARGA.cpp
-	Source/FreeImage/PluginTIFF.cpp
+	# Source/FreeImage/PluginTIFF.cpp
 	Source/FreeImage/PluginWBMP.cpp
 	Source/FreeImage/PluginXBM.cpp
 	Source/FreeImage/PluginXPM.cpp
