@@ -84,39 +84,48 @@ jobs:
         $targetDir = "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
         $tempExtractDir = "$pwd\dx_temp_stage"
         
-        # Create clear paths
         New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
         New-Item -ItemType Directory -Path $tempExtractDir -Force | Out-Null
         
-        Write-Host "Extracting wrapper payloads..."
+        Write-Host "Extracting primary wrapper..."
         & "7z" x dx_sdk.exe -o"$tempExtractDir" -y | Out-Null
         
-        Write-Host "Locating and unpacking the core Developer Headers & Libs..."
-        # The actual SDK headers and libs are packed inside DXSDK_Dic10.cab or similar internal files.
-        # We find all .cab packages extracted and force extract them flat into our target directory.
+        Write-Host "Extracting all nested payload layers recursively..."
+        # By using 'x' instead of 'e' and pointing to the .cab files, 
+        # 7-Zip will automatically dig through the inner cabinet layers.
         Get-ChildItem -Path $tempExtractDir -Filter "*.cab" | ForEach-Object {
-            & "7z" e $_.FullName -o"$targetDir" -y | Out-Null
+            & "7z" x $_.FullName -o"$targetDir" -y | Out-Null
         }
         
-        # Ogre specifically needs an 'Include' and 'Lib/x86' folder tree structure.
-        # Let's clean up the layout so Ogre's FindDirectX9 script hits a bullseye.
-        Write-Host "Structuring SDK paths for CMake..."
-        if (-not (Test-Path "$targetDir\Include")) { New-Item -ItemType Directory -Path "$targetDir\Include" -Force | Out-Null }
-        if (-not (Test-Path "$targetDir\Lib\x86")) { New-Item -ItemType Directory -Path "$targetDir\Lib\x86" -Force | Out-Null }
+        # Sometimes the cabinet files extract into their own subdirectories like 'd3dx9_43_x86'
+        # We search for d3dx9.h and d3d9.lib dynamically and move them to standard paths
+        Write-Host "Consolidating files for CMake..."
+        $includePath = New-Item -ItemType Directory -Path "$targetDir\Include" -Force | Out-Null
+        $libPath = New-Item -ItemType Directory -Path "$targetDir\Lib\x86" -Force | Out-Null
         
-        # Move all header files (*.h) and library files (*.lib) to where CMake expects them
-        Move-Item -Path "$targetDir\*.h" -Destination "$targetDir\Include\" -ErrorAction SilentlyContinue
-        Move-Item -Path "$targetDir\*.lib" -Destination "$targetDir\Lib\x86\" -ErrorAction SilentlyContinue
+        # Find any header file scattered in the tree and move it to \Include
+        Get-ChildItem -Path $targetDir -Filter "*.h" -Recurse | ForEach-Object {
+            if ($_.FullName -notlike "*\Include\*") {
+                Move-Item -Path $_.FullName -Destination "$targetDir\Include\" -Force -ErrorAction SilentlyContinue
+            }
+        }
+        
+        # Find any x86 static library file and move it to \Lib\x86
+        Get-ChildItem -Path $targetDir -Filter "*.lib" -Recurse | ForEach-Object {
+            if ($_.FullName -notlike "*\Lib\*") {
+                Move-Item -Path $_.FullName -Destination "$targetDir\Lib\x86\" -Force -ErrorAction SilentlyContinue
+            }
+        }
         
         Write-Host "=== VERIFYING DESTINATION ==="
         if (Test-Path "$targetDir\Include\d3dx9.h") {
             Write-Host "Success! Found d3dx9.h inside the Include tree."
         } else {
-            Write-Warning "d3dx9.h missing. Let's list files to see structure:"
-            Get-ChildItem -Path $targetDir -Recurse | Select-Object -First 15 FullName
+            Write-Warning "d3dx9.h still missing. Printing top 20 discovered files to trace layout:"
+            Get-ChildItem -Path $targetDir -Recurse | Select-Object -First 20 FullName
         }
         
-        # Define the environment variable so Ogre can see it
+        # Define the environment variable for your Ogre CMake build step
         Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=$targetDir"
     - name: Build Ogre Dependencies
       run: |
