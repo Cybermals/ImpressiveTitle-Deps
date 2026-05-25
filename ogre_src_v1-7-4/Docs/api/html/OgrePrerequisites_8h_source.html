@@ -104,8 +104,8 @@
 <a name="l00077"></a>00077 <span class="preprocessor"></span>
 <a name="l00078"></a>00078 <span class="preprocessor">    #if OGRE_COMPILER == OGRE_COMPILER_GNUC &amp;&amp; OGRE_COMP_VER &gt;= 310 &amp;&amp; !defined(STLPORT)</span>
 <a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">    #   if OGRE_COMP_VER &gt;= 430</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">    #       define HashMap ::std::tr1::unordered_map</span>
-<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">    #       define HashSet ::std::tr1::unordered_set</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">    #       define HashMap ::std::unordered_map</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">    #       define HashSet ::std::unordered_set</span>
 <a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">    #    else</span>
 <a name="l00083"></a>00083 <span class="preprocessor"></span><span class="preprocessor">    #       define HashMap ::__gnu_cxx::hash_map</span>
 <a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">    #       define HashSet ::__gnu_cxx::hash_set</span>
@@ -113,8 +113,8 @@
 <a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">    #else</span>
 <a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">    #   if OGRE_COMPILER == OGRE_COMPILER_MSVC</span>
 <a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">    #       if OGRE_COMP_VER &gt;= 1600 // VC++ 10.0</span>
-<a name="l00089"></a>00089 <span class="preprocessor"></span><span class="preprocessor">    #           define HashMap ::std::tr1::unordered_map</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">    #           define HashSet ::std::tr1::unordered_set</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span><span class="preprocessor">    #           define HashMap ::std::unordered_map</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">    #           define HashSet ::std::unordered_set</span>
 <a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">    #       elif OGRE_COMP_VER &gt; 1300 &amp;&amp; !defined(_STLP_MSVC)</span>
 <a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">    #           define HashMap ::stdext::hash_map</span>
 <a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">    #           define HashSet ::stdext::hash_set</span>
