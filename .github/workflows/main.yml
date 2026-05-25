@@ -85,7 +85,7 @@ jobs:
         cmake --install ogre-build
     - name: Build OgrePagedGeometry
       run: |
-        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -A Win32 -DCMAKE_INSTALL_PREFIX=PagedGeometry -DPAGEDGEOMETRY_BUILD_SAMPLES=false
+        cmake -S ogre-pagedgeometry-1.2.0 -B ogre-pagedgeometry-build -A Win32 -DCMAKE_INSTALL_PREFIX=PagedGeometry -DOgre_INCLUDE_DIRS=Ogre/include/Ogre -DOgre_LIBRARY_DIRS=Ogre/lib -DOis_INCLUDE_DIRS=ogre_src_v1-7-4/Dependencies/include/OIS -DOis_LIBRARY_DIRS=ogre_src_v1-7-4/Dependencies/lib -DPAGEDGEOMETRY_BUILD_SAMPLES=false
         cmake --build ogre-pagedgeometry-build --config Release
         cmake --install ogre-pagedgeometry-build
     - name: Build RakNet
