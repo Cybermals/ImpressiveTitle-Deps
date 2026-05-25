@@ -73,6 +73,23 @@ jobs:
     steps:
     - name: Clone Repo
       uses: actions/checkout@v6
+    - name: Install Legacy DirectX SDK
+      shell: powershell
+      run: |
+        Write-Host "Downloading Legacy DirectX SDK..."
+        Invoke-WebRequest -Uri "https://download.microsoft.com/download/A/E/7/AE743F1F-304B-4E1C-95C3-454C1FE017DE/directx_jun2010_redist.exe" -OutFile "dx_redist.exe"
+        
+        Write-Host "Extracting installer..."
+        New-Item -ItemType Directory -Path "dx_extract" -Force
+        Start-Process -FilePath ".\dx_redist.exe" -ArgumentList "/Q /T:`"$pwd\dx_extract`"" -Wait
+        
+        Write-Host "Installing DirectX SDK components..."
+        # We run dxsetup silently to register the DX9 developer runtimes and files
+        Start-Process -FilePath ".\dx_extract\dxsetup.exe" -ArgumentList "/silent" -Wait
+        
+        # Define the environment variable that Ogre's FindDirectX9.cmake expects
+        # (Usually it defaults to C:\Program Files (x86)\Microsoft DirectX SDK (June 2010))
+        echo "DXSDK_DIR=C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)" >> $env:GITHUB_ENV
     - name: Build Ogre Dependencies
       run: |
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
