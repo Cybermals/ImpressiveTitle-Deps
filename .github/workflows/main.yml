@@ -73,22 +73,19 @@ jobs:
     steps:
     - name: Clone Repo
       uses: actions/checkout@v6
-    - name: Build Ogre Dependencies
+    - name: Build and Locate Ogre Dependencies
       shell: powershell
       run: |
+        # 1. Configure and Build
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
         cmake --build ogredeps-build --config Release
-    
-        # Create the 'Release' folder if it doesn't already exist
-        if (-not (Test-Path "ogredeps-build/src/FreeImage/Release")) {
-            New-Item -ItemType Directory -Path "ogredeps-build/src/FreeImage/Release" -Force
-        }
-    
-        # Copy the lib file from the root FreeImage folder into the Release folder CMake expects
-        if (Test-Path "ogredeps-build/src/FreeImage/FreeImage.lib") {
-            Copy-Item "ogredeps-build/src/FreeImage/FreeImage.lib" -Destination "ogredeps-build/src/FreeImage/Release/FreeImage.lib" -Force
-        }
-        
+
+        # 2. DIAGNOSTIC: Search the entire build tree for FreeImage.lib
+        Write-Host "=== SEARCHING FOR FREEIMAGE.LIB ==="
+        Get-ChildItem -Path "ogredeps-build" -Filter "FreeImage.lib" -Recurse | Select-Object FullName
+        Write-Host "==================================="
+
+        # 3. Attempt install (we expect this to fail, but the search above will tell us why)
         cmake --install ogredeps-build --config Release
     - name: Build Ogre
       run: |
