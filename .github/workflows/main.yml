@@ -76,38 +76,27 @@ jobs:
     - name: Install Legacy DirectX SDK
       shell: powershell
       run: |
-        Write-Host "Downloading Legacy DirectX SDK..."
-        Invoke-WebRequest -Uri "https://download.microsoft.com/download/a/e/7/ae743f1f-632b-4809-87a9-aa1bb3458e31/DXSDK_Jun10.exe" -OutFile "dx_redist.exe"
+        Write-Host "Downloading Legacy DirectX SDK Archive..."
+        # Updated to the direct Microsoft structural link for the developer SDK
+        $url = "https://download.microsoft.com/download/A/E/7/AE743F1F-632B-4809-87A9-AA1BB3458E31/DXSDK_Jun10.exe"
+        Invoke-WebRequest -Uri $url -OutFile "dx_sdk.exe"
         
-        Write-Host "Creating extraction folder..."
-        $extractDir = New-Item -ItemType Directory -Path "$pwd\dx_extract" -Force
-        
-        Write-Host "Extracting installer flat..."
-        # Using the actual executable's internal silent extraction flag via cmd/powershell to guarantee exact pathing
-        $extractProcess = Start-Process -FilePath ".\dx_redist.exe" -ArgumentList "/Q /T:`"$($extractDir.FullName)`"" -PassThru -Wait
-        
-        # Check if the file exists, if not, find where it landed
-        if (-not (Test-Path "$($extractDir.FullName)\dxsetup.exe")) {
-            Write-Host "Searching for dxsetup.exe location..."
-            $foundFile = Get-ChildItem -Path "$($extractDir.FullName)" -Filter "dxsetup.exe" -Recurse | Select-Object -First 1
-            if ($foundFile) {
-                $setupPath = $foundFile.FullName
-                Write-Host "Found dxsetup.exe at: $setupPath"
-            } else {
-                throw "Could not find dxsetup.exe anywhere in the extracted files."
-            }
-        } else {
-            $setupPath = "$($extractDir.FullName)\dxsetup.exe"
+        Write-Host "Creating local destination directory..."
+        # We will extract it directly to the folder CMake expects so we don't have to install anything!
+        $targetDir = "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
+        if (-not (Test-Path $targetDir)) {
+            New-Item -ItemType Directory -Path $targetDir -Force
         }
         
-        Write-Host "Installing DirectX SDK components completely silently..."
-        # Using the standard legacy Microsoft silent install switches
-        $installProcess = Start-Process -FilePath $setupPath -ArgumentList "/A /Q" -PassThru -Wait
+        Write-Host "Extracting headers and libraries via 7-Zip..."
+        # Unpacks the SDK directly into its destination. 
+        # Zero installers executed = Zero headless environment freezes.
+        & "7z" x dx_sdk.exe -o"$targetDir" -y
         
-        Write-Host "Installation completed with exit code: $($installProcess.ExitCode)"
+        Write-Host "DirectX SDK files successfully staged."
         
-        # Define the environment variable for CMake
-        Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
+        # Define the environment variable so Ogre's FindDirectX9 script can see it
+        Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=$targetDir"
     - name: Build Ogre Dependencies
       run: |
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
