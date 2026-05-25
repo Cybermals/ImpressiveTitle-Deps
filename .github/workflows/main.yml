@@ -77,25 +77,46 @@ jobs:
       shell: powershell
       run: |
         Write-Host "Downloading Legacy DirectX SDK Archive..."
-        # Updated to the direct Microsoft structural link for the developer SDK
         $url = "https://download.microsoft.com/download/A/E/7/AE743F1F-632B-4809-87A9-AA1BB3458E31/DXSDK_Jun10.exe"
         Invoke-WebRequest -Uri $url -OutFile "dx_sdk.exe"
         
-        Write-Host "Creating local destination directory..."
-        # We will extract it directly to the folder CMake expects so we don't have to install anything!
+        Write-Host "Creating structural destination directory..."
         $targetDir = "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
-        if (-not (Test-Path $targetDir)) {
-            New-Item -ItemType Directory -Path $targetDir -Force
+        $tempExtractDir = "$pwd\dx_temp_stage"
+        
+        # Create clear paths
+        New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+        New-Item -ItemType Directory -Path $tempExtractDir -Force | Out-Null
+        
+        Write-Host "Extracting wrapper payloads..."
+        & "7z" x dx_sdk.exe -o"$tempExtractDir" -y | Out-Null
+        
+        Write-Host "Locating and unpacking the core Developer Headers & Libs..."
+        # The actual SDK headers and libs are packed inside DXSDK_Dic10.cab or similar internal files.
+        # We find all .cab packages extracted and force extract them flat into our target directory.
+        Get-ChildItem -Path $tempExtractDir -Filter "*.cab" | ForEach-Object {
+            & "7z" e $_.FullName -o"$targetDir" -y | Out-Null
         }
         
-        Write-Host "Extracting headers and libraries via 7-Zip..."
-        # Unpacks the SDK directly into its destination. 
-        # Zero installers executed = Zero headless environment freezes.
-        & "7z" x dx_sdk.exe -o"$targetDir" -y
+        # Ogre specifically needs an 'Include' and 'Lib/x86' folder tree structure.
+        # Let's clean up the layout so Ogre's FindDirectX9 script hits a bullseye.
+        Write-Host "Structuring SDK paths for CMake..."
+        if (-not (Test-Path "$targetDir\Include")) { New-Item -ItemType Directory -Path "$targetDir\Include" -Force | Out-Null }
+        if (-not (Test-Path "$targetDir\Lib\x86")) { New-Item -ItemType Directory -Path "$targetDir\Lib\x86" -Force | Out-Null }
         
-        Write-Host "DirectX SDK files successfully staged."
+        # Move all header files (*.h) and library files (*.lib) to where CMake expects them
+        Move-Item -Path "$targetDir\*.h" -Destination "$targetDir\Include\" -ErrorAction SilentlyContinue
+        Move-Item -Path "$targetDir\*.lib" -Destination "$targetDir\Lib\x86\" -ErrorAction SilentlyContinue
         
-        # Define the environment variable so Ogre's FindDirectX9 script can see it
+        Write-Host "=== VERIFYING DESTINATION ==="
+        if (Test-Path "$targetDir\Include\d3dx9.h") {
+            Write-Host "Success! Found d3dx9.h inside the Include tree."
+        } else {
+            Write-Warning "d3dx9.h missing. Let's list files to see structure:"
+            Get-ChildItem -Path $targetDir -Recurse | Select-Object -First 15 FullName
+        }
+        
+        # Define the environment variable so Ogre can see it
         Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=$targetDir"
     - name: Build Ogre Dependencies
       run: |
