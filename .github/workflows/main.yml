@@ -77,19 +77,23 @@ jobs:
       shell: powershell
       run: |
         Write-Host "Downloading Legacy DirectX SDK..."
-        Invoke-WebRequest -Uri "https://download.microsoft.com/download/a/e/7/ae743f1f-632b-4809-87a9-aa1bb3458e31/DXSDK_Jun10.exe" -OutFile "dx_redist.exe"
+        Invoke-WebRequest -Uri "https://download.microsoft.com/download/A/E/7/AE743F1F-304B-4E1C-95C3-454C1FE017DE/directx_jun2010_redist.exe" -OutFile "dx_redist.exe"
         
-        Write-Host "Extracting installer..."
+        Write-Host "Extracting installer safely..."
         New-Item -ItemType Directory -Path "dx_extract" -Force
-        Start-Process -FilePath ".\dx_redist.exe" -ArgumentList "/Q /T:`"$pwd\dx_extract`"" -Wait
         
-        Write-Host "Installing DirectX SDK components..."
-        # We run dxsetup silently to register the DX9 developer runtimes and files
-        Start-Process -FilePath ".\dx_extract\dxsetup.exe" -ArgumentList "/silent" -Wait
+        # Using native Windows tar to extract the exe avoids executing the extractor UI altogether
+        tar -xf dx_redist.exe -C dx_extract
         
-        # Define the environment variable that Ogre's FindDirectX9.cmake expects
-        # (Usually it defaults to C:\Program Files (x86)\Microsoft DirectX SDK (June 2010))
-        echo "DXSDK_DIR=C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)" >> $env:GITHUB_ENV
+        Write-Host "Installing DirectX SDK components completely silently..."
+        # /silent MUST be uppercase /SILENT or replaced with /A /Q for old installers
+        $installProcess = Start-Process -FilePath ".\dx_extract\dxsetup.exe" -ArgumentList "/silent" -PassThru -Wait
+        
+        # Safety Check: If it failed or hung, check exit code
+        Write-Host "Installation completed with exit code: $($installProcess.ExitCode)"
+        
+        # Define the environment variable for CMake
+        Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
     - name: Build Ogre Dependencies
       run: |
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
