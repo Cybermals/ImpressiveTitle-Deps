@@ -57,7 +57,7 @@ set(FreeImage_SOURCES
 	Source/FreeImage/PluginPNM.cpp
 	Source/FreeImage/PluginPSD.cpp
 	Source/FreeImage/PluginRAS.cpp
-	Source/FreeImage/PluginRAW.cpp
+	# Source/FreeImage/PluginRAW.cpp
 	Source/FreeImage/PluginSGI.cpp
 	Source/FreeImage/PluginTARGA.cpp
 	Source/FreeImage/PluginTIFF.cpp
@@ -217,23 +217,23 @@ set(FreeImage_SOURCES
 	Source/LibPNG/pngwrite.c
 	Source/LibPNG/pngwtran.c
 	Source/LibPNG/pngwutil.c
-	Source/LibRawLite/internal/dcraw_common.cpp
-	Source/LibRawLite/internal/dcraw_fileio.cpp
-	Source/LibRawLite/internal/defines.h
-    Source/LibRawLite/internal/demosaic_packs.cpp
-    Source/LibRawLite/internal/libraw_bytebuffer.h
-	Source/LibRawLite/internal/libraw_internal_funcs.h
-	Source/LibRawLite/internal/var_defines.h
-	Source/LibRawLite/libraw/libraw.h
-	Source/LibRawLite/libraw/libraw_alloc.h
-	Source/LibRawLite/libraw/libraw_const.h
-	Source/LibRawLite/libraw/libraw_datastream.h
-	Source/LibRawLite/libraw/libraw_internal.h
-	Source/LibRawLite/libraw/libraw_types.h
-	Source/LibRawLite/libraw/libraw_version.h
-	Source/LibRawLite/src/libraw_c_api.cpp
-	Source/LibRawLite/src/libraw_cxx.cpp
-    Source/LibRawLite/src/libraw_datastream.cpp
+	# Source/LibRawLite/internal/dcraw_common.cpp
+	# Source/LibRawLite/internal/dcraw_fileio.cpp
+	# Source/LibRawLite/internal/defines.h
+    # Source/LibRawLite/internal/demosaic_packs.cpp
+    # Source/LibRawLite/internal/libraw_bytebuffer.h
+	# Source/LibRawLite/internal/libraw_internal_funcs.h
+	# Source/LibRawLite/internal/var_defines.h
+	# Source/LibRawLite/libraw/libraw.h
+	# Source/LibRawLite/libraw/libraw_alloc.h
+	# Source/LibRawLite/libraw/libraw_const.h
+	# Source/LibRawLite/libraw/libraw_datastream.h
+	# Source/LibRawLite/libraw/libraw_internal.h
+	# Source/LibRawLite/libraw/libraw_types.h
+	# Source/LibRawLite/libraw/libraw_version.h
+	# Source/LibRawLite/src/libraw_c_api.cpp
+	# Source/LibRawLite/src/libraw_cxx.cpp
+    # Source/LibRawLite/src/libraw_datastream.cpp
 	Source/LibTIFF4/t4.h
 	Source/LibTIFF4/tif_aux.c
 	Source/LibTIFF4/tif_close.c
@@ -520,7 +520,7 @@ include_directories(Source/LibJPEG)
 include_directories(Source/LibMNG)
 include_directories(Source/LibOpenJPEG)
 include_directories(Source/LibPNG)
-include_directories(Source/LibRawLite)
+# include_directories(Source/LibRawLite)
 include_directories(Source/LibTIFF)
 # include_directories(Source/OpenEXR)
 # include_directories(Source/OpenEXR/Half)
