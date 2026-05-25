@@ -75,7 +75,7 @@ jobs:
       uses: actions/checkout@v6
     - name: Build Ogre Dependencies
       run: |
-        cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
+        cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DCMAKE_CXX_FLAGS="/D_FORCE_INLINES /D__SSE2__" -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
         cmake --build ogredeps-build --config Release
         cmake --install ogredeps-build
     - name: Build Ogre
