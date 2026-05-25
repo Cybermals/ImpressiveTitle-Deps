@@ -86,8 +86,8 @@ Most compilers implement their own version of this keyword ...
 	#endif
 #endif
 
-/* MSVC and Borland C do not have lrintf */
-#if defined(_MSC_VER) || defined(__BORLANDC__)
+/* Borland C does not have lrintf */
+#if defined(__BORLANDC__)
 static INLINE long lrintf(float f){
 #ifdef _M_X64
     return (long)((f>0.0f) ? (f + 0.5f):(f -0.5f));
