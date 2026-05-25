@@ -234,53 +234,53 @@ set(FreeImage_SOURCES
 	# Source/LibRawLite/src/libraw_c_api.cpp
 	# Source/LibRawLite/src/libraw_cxx.cpp
     # Source/LibRawLite/src/libraw_datastream.cpp
-	Source/LibTIFF4/t4.h
-	Source/LibTIFF4/tif_aux.c
-	Source/LibTIFF4/tif_close.c
-	Source/LibTIFF4/tif_codec.c
-	Source/LibTIFF4/tif_color.c
-	Source/LibTIFF4/tif_compress.c
-	Source/LibTIFF4/tif_config.h
-	Source/LibTIFF4/tif_dir.c
-	Source/LibTIFF4/tif_dir.h
-	Source/LibTIFF4/tif_dirinfo.c
-	Source/LibTIFF4/tif_dirread.c
-	Source/LibTIFF4/tif_dirwrite.c
-	Source/LibTIFF4/tif_dumpmode.c
-	Source/LibTIFF4/tif_error.c
-	Source/LibTIFF4/tif_extension.c
-	Source/LibTIFF4/tif_fax3.c
-	Source/LibTIFF4/tif_fax3.h
-	Source/LibTIFF4/tif_fax3sm.c
-	Source/LibTIFF4/tif_flush.c
-	Source/LibTIFF4/tif_getimage.c
-	Source/LibTIFF4/tif_jpeg.c
-    Source/LibTIFF4/tif_jpeg_12.c
-	Source/LibTIFF4/tif_luv.c
-    Source/LibTIFF4/tif_lzma.c
-	Source/LibTIFF4/tif_lzw.c
-	Source/LibTIFF4/tif_next.c
-	Source/LibTIFF4/tif_ojpeg.c
-	Source/LibTIFF4/tif_open.c
-	Source/LibTIFF4/tif_packbits.c
-	Source/LibTIFF4/tif_pixarlog.c
-	Source/LibTIFF4/tif_predict.c
-	Source/LibTIFF4/tif_predict.h
-	Source/LibTIFF4/tif_print.c
-	Source/LibTIFF4/tif_read.c
-	Source/LibTIFF4/tif_strip.c
-	Source/LibTIFF4/tif_swab.c
-	Source/LibTIFF4/tif_thunder.c
-	Source/LibTIFF4/tif_tile.c
-	Source/LibTIFF4/tif_version.c
-	Source/LibTIFF4/tif_warning.c
-	Source/LibTIFF4/tif_write.c
-	Source/LibTIFF4/tif_zip.c
-	Source/LibTIFF4/tiff.h
-	Source/LibTIFF4/tiffio.h
-	Source/LibTIFF4/tiffiop.h
-	Source/LibTIFF4/tiffvers.h
-	Source/LibTIFF4/uvcode.h
+	# Source/LibTIFF4/t4.h
+	# Source/LibTIFF4/tif_aux.c
+	# Source/LibTIFF4/tif_close.c
+	# Source/LibTIFF4/tif_codec.c
+	# Source/LibTIFF4/tif_color.c
+	# Source/LibTIFF4/tif_compress.c
+	# Source/LibTIFF4/tif_config.h
+	# Source/LibTIFF4/tif_dir.c
+	# Source/LibTIFF4/tif_dir.h
+	# Source/LibTIFF4/tif_dirinfo.c
+	# Source/LibTIFF4/tif_dirread.c
+	# Source/LibTIFF4/tif_dirwrite.c
+	# Source/LibTIFF4/tif_dumpmode.c
+	# Source/LibTIFF4/tif_error.c
+	# Source/LibTIFF4/tif_extension.c
+	# Source/LibTIFF4/tif_fax3.c
+	# Source/LibTIFF4/tif_fax3.h
+	# Source/LibTIFF4/tif_fax3sm.c
+	# Source/LibTIFF4/tif_flush.c
+	# Source/LibTIFF4/tif_getimage.c
+	# Source/LibTIFF4/tif_jpeg.c
+    # Source/LibTIFF4/tif_jpeg_12.c
+	# Source/LibTIFF4/tif_luv.c
+    # Source/LibTIFF4/tif_lzma.c
+	# Source/LibTIFF4/tif_lzw.c
+	# Source/LibTIFF4/tif_next.c
+	# Source/LibTIFF4/tif_ojpeg.c
+	# Source/LibTIFF4/tif_open.c
+	# Source/LibTIFF4/tif_packbits.c
+	# Source/LibTIFF4/tif_pixarlog.c
+	# Source/LibTIFF4/tif_predict.c
+	# Source/LibTIFF4/tif_predict.h
+	# Source/LibTIFF4/tif_print.c
+	# Source/LibTIFF4/tif_read.c
+	# Source/LibTIFF4/tif_strip.c
+	# Source/LibTIFF4/tif_swab.c
+	# Source/LibTIFF4/tif_thunder.c
+	# Source/LibTIFF4/tif_tile.c
+	# Source/LibTIFF4/tif_version.c
+	# Source/LibTIFF4/tif_warning.c
+	# Source/LibTIFF4/tif_write.c
+	# Source/LibTIFF4/tif_zip.c
+	# Source/LibTIFF4/tiff.h
+	# Source/LibTIFF4/tiffio.h
+	# Source/LibTIFF4/tiffiop.h
+	# Source/LibTIFF4/tiffvers.h
+	# Source/LibTIFF4/uvcode.h
 	Source/Metadata/Exif.cpp
 	Source/Metadata/FIRational.cpp
 	Source/Metadata/FIRational.h
@@ -521,7 +521,7 @@ include_directories(Source/LibMNG)
 include_directories(Source/LibOpenJPEG)
 include_directories(Source/LibPNG)
 # include_directories(Source/LibRawLite)
-include_directories(Source/LibTIFF)
+# include_directories(Source/LibTIFF)
 # include_directories(Source/OpenEXR)
 # include_directories(Source/OpenEXR/Half)
 # include_directories(Source/OpenEXR/Iex)
