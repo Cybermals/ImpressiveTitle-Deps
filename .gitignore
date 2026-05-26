@@ -43,3 +43,13 @@
 
 # debug information files
 *.dwo
+
+# Build directories
+ogredeps-build/**
+ogre-build/**
+ogre-pagedgeometry-build/**
+RakNet-build/**
+ogre_src_v1-7-4/Dependencies/**
+Ogre/**
+PagedGeometry/**
+RakNet/**
