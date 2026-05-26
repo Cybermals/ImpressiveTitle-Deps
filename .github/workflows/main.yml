@@ -89,12 +89,15 @@ jobs:
         cmake --build ogre-pagedgeometry-build --config Release
         cmake --install ogre-pagedgeometry-build
     - name: Build RakNet
+      shell: powershell
       run: |
         cmake -S RakNet-master -B RakNet-build -A Win32 -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build --config Release
-        cmake --install RakNet-build
-        ls
-        ls RakNet
+        # cmake --install RakNet-build  # always fails, we must manually copy the files instead
+        mkdir -p RakNet/include/
+        mkdir RakNet/lib/
+        cp RakNet-master/Source/*.h RakNet/include/
+        cp RakNet-build/Lib/LibStatic/Release/*.lib RakNet/lib/
     - name: Gather Build Outputs
       shell: powershell
       run: |
