@@ -73,60 +73,6 @@ jobs:
     steps:
     - name: Clone Repo
       uses: actions/checkout@v6
-    - name: Install Legacy DirectX SDK
-      shell: powershell
-      run: |
-        Write-Host "Downloading Legacy DirectX SDK Archive..."
-        $url = "https://download.microsoft.com/download/A/E/7/AE743F1F-632B-4809-87A9-AA1BB3458E31/DXSDK_Jun10.exe"
-        Invoke-WebRequest -Uri $url -OutFile "dx_sdk.exe"
-        
-        Write-Host "Creating structural destination directory..."
-        $targetDir = "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)"
-        $tempExtractDir = "$pwd\dx_temp_stage"
-        
-        New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
-        New-Item -ItemType Directory -Path $tempExtractDir -Force | Out-Null
-        
-        Write-Host "Extracting primary wrapper..."
-        & "7z" x dx_sdk.exe -o"$tempExtractDir" -y | Out-Null
-        
-        Write-Host "Extracting all nested payload layers recursively..."
-        # By using 'x' instead of 'e' and pointing to the .cab files, 
-        # 7-Zip will automatically dig through the inner cabinet layers.
-        Get-ChildItem -Path $tempExtractDir -Filter "*.cab" | ForEach-Object {
-            & "7z" x $_.FullName -o"$targetDir" -y | Out-Null
-        }
-        
-        # Sometimes the cabinet files extract into their own subdirectories like 'd3dx9_43_x86'
-        # We search for d3dx9.h and d3d9.lib dynamically and move them to standard paths
-        Write-Host "Consolidating files for CMake..."
-        $includePath = New-Item -ItemType Directory -Path "$targetDir\Include" -Force | Out-Null
-        $libPath = New-Item -ItemType Directory -Path "$targetDir\Lib\x86" -Force | Out-Null
-        
-        # Find any header file scattered in the tree and move it to \Include
-        Get-ChildItem -Path $targetDir -Filter "*.h" -Recurse | ForEach-Object {
-            if ($_.FullName -notlike "*\Include\*") {
-                Move-Item -Path $_.FullName -Destination "$targetDir\Include\" -Force -ErrorAction SilentlyContinue
-            }
-        }
-        
-        # Find any x86 static library file and move it to \Lib\x86
-        Get-ChildItem -Path $targetDir -Filter "*.lib" -Recurse | ForEach-Object {
-            if ($_.FullName -notlike "*\Lib\*") {
-                Move-Item -Path $_.FullName -Destination "$targetDir\Lib\x86\" -Force -ErrorAction SilentlyContinue
-            }
-        }
-        
-        Write-Host "=== VERIFYING DESTINATION ==="
-        if (Test-Path "$targetDir\Include\d3dx9.h") {
-            Write-Host "Success! Found d3dx9.h inside the Include tree."
-        } else {
-            Write-Warning "d3dx9.h still missing. Printing top 20 discovered files to trace layout:"
-            Get-ChildItem -Path $targetDir -Recurse | Select-Object -First 20 FullName
-        }
-        
-        # Define the environment variable for your Ogre CMake build step
-        Add-Content -Path $env:GITHUB_ENV -Value "DXSDK_DIR=$targetDir"
     - name: Build Ogre Dependencies
       run: |
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
@@ -147,3 +93,19 @@ jobs:
         cmake -S RakNet-master -B RakNet-build -A Win32 -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build --config Release
         cmake --install RakNet-build
+        ls
+        ls RakNet
+    - name: Gather Build Outputs
+      shell: powershell
+      run: |
+        mkdir -p deps/windows/amd64/vc18/
+        mv Ogre/ deps/windows/amd64/vc18/
+        # cp -r ogre_src_v1-7-4/Dependencies/* deps/windows/amd64/vc18/Ogre/
+        mv PagedGeometry/ deps/windows/amd64/vc18/
+        mv RakNet/ deps/windows/amd64/vc18/
+        mv zziplib/ deps/windows/amd64/vc18/
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: it-deps-win32-vc18
+        path: deps/
