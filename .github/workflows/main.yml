@@ -152,7 +152,7 @@ jobs:
       run: |
         mkdir -p deps/windows/amd64/vc18/
         mv Ogre/ deps/windows/amd64/vc18/
-        cp -r ogre_src_v1-7-4/Dependencies/* deps/windows/amd64/vc18/Ogre/
+        # cp -r ogre_src_v1-7-4/Dependencies/* deps/windows/amd64/vc18/Ogre/
         mv PagedGeometry/ deps/windows/amd64/vc18/
         mv RakNet/ deps/windows/amd64/vc18/
         mv zziplib/ deps/windows/amd64/vc18/
