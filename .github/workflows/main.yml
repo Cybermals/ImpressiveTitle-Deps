@@ -147,3 +147,17 @@ jobs:
         cmake -S RakNet-master -B RakNet-build -A Win32 -DCMAKE_INSTALL_PREFIX=RakNet
         cmake --build RakNet-build --config Release
         cmake --install RakNet-build
+    - name: Gather Build Outputs
+      shell: powershell
+      run: |
+        mkdir -p deps/windows/amd64/vc18/
+        mv Ogre/ deps/windows/amd64/vc18/
+        cp -r ogre_src_v1-7-4/Dependencies/* deps/windows/amd64/vc18/Ogre/
+        mv PagedGeometry/ deps/windows/amd64/vc18/
+        mv RakNet/ deps/windows/amd64/vc18/
+        mv zziplib/ deps/windows/amd64/vc18/
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: it-deps-win32-vc18
+        path: deps/
