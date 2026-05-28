@@ -79,9 +79,14 @@ jobs:
         cmake -S ogredeps -B ogredeps-build -A Win32 -DCMAKE_INSTALL_PREFIX=ogre_src_v1-7-4/Dependencies -DOGREDEPS_BUILD_AMD_QBS=false -DOGREDEPS_BUILD_NVIDIA_NVAPI=false -DOGREDEPS_BUILD_SDL2=false -DOGREDEPS_BUILD_RAPIDJSON=false -DOGREDEPS_BUILD_REMOTERY=false
         cmake --build ogredeps-build --config Release
         cmake --install ogredeps-build
+        mkdir zlib/
+        mkdir zlib/include/
+        mkdir zlib/lib/
         mkdir zziplib/
         mkdir zziplib/include/
         mkdir zziplib/lib/
+        cp -r ogre_src_v1-7-4/Dependencies/include/zlib/ zlib/include/
+        cp ogre_src_v1-7-4/Dependencies/lib/Release/zlib/zlib.lib zlib/lib/
         cp -r ogre_src_v1-7-4/Dependencies/include/zzip/ zziplib/include/
         cp ogre_src_v1-7-4/Dependencies/lib/Release/zziplib.lib zziplib/lib/
     - name: Build Ogre
@@ -113,6 +118,7 @@ jobs:
         # cp -r ogre_src_v1-7-4/Dependencies/* deps/windows/amd64/vc18/Ogre/
         mv PagedGeometry/ deps/windows/amd64/vc18/
         mv RakNet/ deps/windows/amd64/vc18/
+        mv zlib/ deps/windows/amd64/vc18/
         mv zziplib/ deps/windows/amd64/vc18/
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v7
