@@ -87,7 +87,7 @@ jobs:
         mkdir zziplib/lib/
         cp ogre_src_v1-7-4/Dependencies/include/zlib.h zlib/include/
         cp ogre_src_v1-7-4/Dependencies/include/zconf.h zlib/include/
-        cp ogre_src_v1-7-4/Dependencies/lib/Release/zlib/zlib.lib zlib/lib/
+        cp ogre_src_v1-7-4/Dependencies/lib/Release/zlib.lib zlib/lib/
         cp -r ogre_src_v1-7-4/Dependencies/include/zzip/ zziplib/include/
         cp ogre_src_v1-7-4/Dependencies/lib/Release/zziplib.lib zziplib/lib/
     - name: Build Ogre
